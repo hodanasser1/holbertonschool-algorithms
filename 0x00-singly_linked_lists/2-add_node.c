@@ -1,4 +1,4 @@
-nclude "lists.h"
+#include "lists.h"
 
 /**
  * add_node - function to add a new node at the beginning of list_t

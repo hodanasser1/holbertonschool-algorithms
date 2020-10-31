@@ -1,34 +1,25 @@
-#ifndef PATHFINDING_H
-#define PATHFINDING_H
+#ifndef _PATHFINDING_H_
+#define _PATHFINDING_H_
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
-#include <string.h>
-#include <math.h>
 #include "queues.h"
 #include "graphs.h"
 
-#define RIGHT        \
-	{            \
-		1, 0 \
-	}
-#define BOTTOM       \
-	{            \
-		0, 1 \
-	}
-#define LEFT          \
-	{             \
-		-1, 0 \
-	}
-#define TOP           \
-	{             \
-		0, -1 \
-	}
-#define Euclidean_dst(x1, y1, x2, y2) \
-	(sqrt(pow((x2) - (x1), 2) + pow((y2) - (y1), 2)))
+#define OPEN '0'
+#define CLOSE '1'
+#define BLOCKED 'x'
+#define VISITED '+'
+#define START 'S'
+#define GOAL 'G'
 
+#define  UNEXPLORED '0'
+#define  EXPLORED '1'
+#define BACKTRACK '2'
+#define INF  UINT_MAX
+#define V graph->nb_vertices
 /**
  * struct point_s - Structure storing coordinates
  *
@@ -49,5 +40,4 @@ queue_t *dijkstra_graph(graph_t *graph, vertex_t const *start,
 			vertex_t const *target);
 queue_t *a_star_graph(graph_t *graph, vertex_t const *start,
 		      vertex_t const *target);
-
-#endif /* PATHFINDING_H */
+#endif
